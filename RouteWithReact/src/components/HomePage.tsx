@@ -1,9 +1,18 @@
+import { Link } from "react-router-dom";
+
 const HomePage = () => {
   return (
-    <div>
-      <li>HomePage</li>
-      <a href="http://localhost:5173/users">Users</a>
-    </div>
+    <>
+      <p>HomePage</p>
+
+      <Link to="/users" style={{ display: "block", marginBottom: "10px" }}>
+        Users
+      </Link>
+      <Link to="/contact" style={{ display: "block" }}>
+        ContactPage
+      </Link>
+      {/* <a href="/users">Users</a> */}
+    </>
   );
 };
 

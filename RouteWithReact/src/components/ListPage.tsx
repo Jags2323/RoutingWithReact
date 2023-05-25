@@ -1,12 +1,19 @@
+import { useNavigate } from "react-router-dom";
+
 const ListPage = () => {
+    const navigate = useNavigate();
   return (
-    <div>
+    <form onSubmit={(event) =>{
+        event.preventDefault();
+        navigate("/");
+    }}>
       <ul>
         <li>jags</li>
         <li>kittu</li>
         <li>reddy</li>
       </ul>
-    </div>
+      <button className="btn btn-primary">submit</button>
+    </form>
   );
 };
 
