@@ -1,18 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../components/HomePage";
-import ListPage from "../components/ListPage";
-import ContactPage from "../components/ContactPage";
-import UserListPage from "../components/UserListPage";
-import UserDetailsPage from "../components/UserDetailsPage";
+import Layout from "../components/Layout";
+import UserList from "../components/UserList";
+import UserDetails from "../components/UserDetails";
+import UsersPage from "../components/UsersPage";
 
 // array of route objects
 // two properties path and element to render in that path
 const router = createBrowserRouter([
-  { path: "/", element: <HomePage /> },
-//   { path: "/users", element: <ListPage /> },
-  { path: "/contact", element: <ContactPage /> },
-  { path: "/users", element: <UserListPage /> },
-  { path: "/users/:id", element: <UserDetailsPage /> },
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { index: true, element: <HomePage /> },
+      //   { path: "/users", element: <ListPage /> },
+      //   { path: "/contact", element: <ContactPage /> },
+      {
+        path: "users",
+        element: <UsersPage />,
+        children: [{ path: ":id", element: <UserDetails /> }],
+      },
+    ],
+  },
 ]);
 
 export default router;

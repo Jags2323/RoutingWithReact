@@ -12,7 +12,7 @@ const HomePage = () => {
         ContactPage
       </Link>
       <Link to="/users" style={{ display: "block",marginBottom: "10px"  }}>
-        UserListPage
+        UserList
       </Link>
       
       {/* <a href="/users">Users</a> */}
